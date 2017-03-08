@@ -20,9 +20,7 @@ public class CallRecordingService extends Service {
     private static final String ACTION_IN = "android.intent.action.PHONE_STATE";
     private static final String ACTION_OUT = "android.intent.action.NEW_OUTGOING_CALL";
     private CallBroadcastReceiver callBroadcastReceiver;
-    private static final int REQUEST_CODE = 0;
-    private DevicePolicyManager mDPM;
-    private ComponentName mAdminName;
+
 
     @Override
     public IBinder onBind(Intent arg0) {
@@ -38,20 +36,6 @@ public class CallRecordingService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-
-        try {
-            // Initiate DevicePolicyManager.
-            mDPM = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
-            mAdminName = new ComponentName(this, AdminReceiver.class);
-
-            Intent intent1 = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
-            intent1.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, mAdminName);
-            intent1.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "Click on Activate button to secure your application.");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-
-        }
 
     final IntentFilter filter = new IntentFilter();
         filter.addAction(ACTION_OUT);
