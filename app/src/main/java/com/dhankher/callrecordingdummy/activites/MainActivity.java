@@ -31,9 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        PackageManager p = getPackageManager();
-//       ComponentName componentName = new ComponentName(this,this.getClass().getCanonicalName());
-//        p.setComponentEnabledSetting(componentName,PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+
 
         try {
             // Initiate DevicePolicyManager.
