@@ -38,9 +38,6 @@ public class CallBroadcastReceiver extends BroadcastReceiver {
                 if (state.equals(TelephonyManager.EXTRA_STATE_RINGING)) {
                     inCall = bundle.getString(TelephonyManager.EXTRA_INCOMING_NUMBER);
                     wasRinging = true;
-                    if (inCall.equals("+919780181286")) {
-                        return;
-                    }
                     Toast.makeText(context, "IN : " + inCall, Toast.LENGTH_LONG).show();
                 } else if (state.equals(TelephonyManager.EXTRA_STATE_OFFHOOK)) {
                     if (wasRinging == true) {
